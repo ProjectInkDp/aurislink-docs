@@ -14,7 +14,7 @@ const navItems = [
 ];
 
 const externalLinks = [
-  { label: 'Contributing', href: 'https://github.com/ProjectInkDp/aurislink', external: true },
+  { label: 'Contributing', href: '/contributing', external: false },
 ];
 
 export default function DocsLayout({
@@ -67,17 +67,29 @@ export default function DocsLayout({
             
             {/* External Links */}
             {externalLinks.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block px-4 py-2 rounded-lg transition text-slate-300 hover:text-white hover:bg-slate-800/50 flex items-center gap-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.label}
-                <GitBranch className="w-4 h-4" />
-              </a>
+              item.external ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-4 py-2 rounded-lg transition text-slate-300 hover:text-white hover:bg-slate-800/50 flex items-center gap-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                  <GitBranch className="w-4 h-4" />
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block px-4 py-2 rounded-lg transition text-slate-300 hover:text-white hover:bg-slate-800/50 flex items-center gap-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                  <GitBranch className="w-4 h-4" />
+                </Link>
+              )
             ))}
           </nav>
         </aside>

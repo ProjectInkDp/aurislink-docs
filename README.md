@@ -10,7 +10,7 @@
   <h3>🎵 Professional Documentation & Landing Page for AurisLink</h3>
   <p><strong>A high-performance, Lavalink v4-compatible audio server</strong></p>
   
-  [🌐 Live Site](https://aurislink-docs.vercel.app) • [📖 Main Repo](https://github.com/ProjectInkDp/aurislink) • [💬 Discord](#discord) • [🤝 Contributing](#contributing)
+  [🌐 Live Site](https://aurislink-docs.vercel.app) • [📖 Main Repo](https://github.com/ProjectInkDp/aurislink) • [🤝 Contributing](#contributing)
 </div>
 
 ---
@@ -42,7 +42,6 @@ The site includes comprehensive documentation covering:
 | **API Reference** | REST API and WebSocket documentation with examples |
 | **Audio Sources** | How to configure SoundCloud, Deezer, Spotify, JioSaavn |
 | **Audio Filters** | Available audio effects and filter usage |
-| **Contributing** | Guidelines for contributing to AurisLink |
 
 ---
 
@@ -97,8 +96,7 @@ aurislink-docs/
 │       ├── configuration/    # Configuration guide
 │       ├── api/              # API reference
 │       ├── sources/          # Audio sources guide
-│       ├── filters/          # Audio filters guide
-│       └── contributing/     # Contributing guide
+│       └── filters/          # Audio filters guide
 ├── public/                   # Static assets
 ├── package.json
 ├── tsconfig.json
@@ -133,7 +131,6 @@ npm start            # Start production server
 
 # Code Quality
 npm run lint         # Run ESLint
-npm run format       # Format code with Prettier (if configured)
 ```
 
 ---
@@ -144,32 +141,12 @@ npm run format       # Format code with Prettier (if configured)
 
 This project is optimized for [Vercel](https://vercel.com/). Deployment is automatic when you push to the main branch.
 
-#### Manual Deployment
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel --prod
-```
-
 #### Environment Variables
 
 Create a `.env.local` file for local development:
 
 ```env
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
-```
-
-### Docker
-
-```bash
-# Build Docker image
-docker build -t aurislink-docs .
-
-# Run container
-docker run -p 3000:3000 aurislink-docs
 ```
 
 ---
@@ -193,95 +170,11 @@ docker run -p 3000:3000 aurislink-docs
 
 ## 🤝 Contributing
 
-We welcome contributions! Whether it's bug fixes, feature requests, or documentation improvements, your help makes AurisLink better.
+**⚠️ This repository does NOT accept contributions.**
 
-### How to Contribute
+Contributions to the **AurisLink main project** are welcome! Please refer to the [AurisLink Contributing Guide](https://github.com/ProjectInkDp/aurislink) for details on how to contribute to the main project.
 
-1. **Fork the Repository**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/aurislink-docs.git
-   cd aurislink-docs
-   ```
-
-2. **Create a Feature Branch**
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-3. **Make Your Changes**
-   - Follow the existing code style
-   - Update documentation if needed
-   - Test your changes locally
-
-4. **Commit Your Changes**
-   ```bash
-   git commit -m "feat: add your feature description"
-   ```
-
-5. **Push to Your Fork**
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-6. **Open a Pull Request**
-   - Describe your changes clearly
-   - Reference any related issues
-   - Wait for review and feedback
-
-### Contribution Guidelines
-
-- **Code Style:** Follow the existing code patterns
-- **Commits:** Use conventional commits (feat:, fix:, docs:, etc.)
-- **Documentation:** Update README and docs for new features
-- **Testing:** Test your changes before submitting
-- **Respect:** Be respectful and constructive in discussions
-
-### Areas for Contribution
-
-- 📚 **Documentation** — Improve guides, add examples, fix typos
-- 🎨 **Design** — Enhance UI/UX, improve accessibility
-- 🐛 **Bug Fixes** — Report and fix issues
-- ✨ **Features** — Add new sections or functionality
-- 🌍 **Translations** — Help translate documentation
-
----
-
-## 💬 Discord Community
-
-Join our Discord server for discussions, support, and announcements:
-
-- **Server:** [AurisLink Discord](https://discord.gg/aurislink)
-- **Channels:**
-  - `#announcements` — Latest updates and releases
-  - `#support` — Get help from the community
-  - `#development` — Discuss development and features
-  - `#showcase` — Share your projects using AurisLink
-
----
-
-## 📊 Performance
-
-### Lighthouse Scores
-
-- **Performance:** 95+
-- **Accessibility:** 95+
-- **Best Practices:** 95+
-- **SEO:** 100
-
-### Page Load Times
-
-- **First Contentful Paint (FCP):** < 1s
-- **Largest Contentful Paint (LCP):** < 2s
-- **Cumulative Layout Shift (CLS):** < 0.1
-
----
-
-## 🔐 Security
-
-- **HTTPS:** All connections are encrypted
-- **CSP:** Content Security Policy headers configured
-- **Dependencies:** Regular security updates and audits
-- **License:** AGPL-3.0 — Ensures code remains open source
+**Important:** Only the `dev` branch of the main AurisLink repository accepts pull requests. Any PRs submitted to other branches will be rejected.
 
 ---
 
@@ -311,20 +204,7 @@ See [LICENSE](./LICENSE) for the full license text.
 
 - **Documentation:** [aurislink-docs.vercel.app](https://aurislink-docs.vercel.app)
 - **Main Repository:** [github.com/ProjectInkDp/aurislink](https://github.com/ProjectInkDp/aurislink)
-- **Issues:** [GitHub Issues](https://github.com/ProjectInkDp/aurislink-docs/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/ProjectInkDp/aurislink-docs/discussions)
-
----
-
-## 🚀 Roadmap
-
-- [ ] Add search functionality to documentation
-- [ ] Implement dark/light theme toggle
-- [ ] Add video tutorials section
-- [ ] Create interactive API playground
-- [ ] Add multi-language support
-- [ ] Implement analytics dashboard
-- [ ] Add community showcase section
+- **Issues:** [GitHub Issues](https://github.com/ProjectInkDp/aurislink/issues)
 
 ---
 
