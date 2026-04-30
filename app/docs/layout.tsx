@@ -13,6 +13,10 @@ const navItems = [
   { label: 'Sources', href: '/docs/sources' },
 ];
 
+const externalLinks = [
+  { label: 'Contributing', href: 'https://github.com/ProjectInkDp/aurislink', external: true },
+];
+
 export default function DocsLayout({
   children,
 }: {
@@ -56,6 +60,24 @@ export default function DocsLayout({
               >
                 {item.label}
               </Link>
+            ))}
+            
+            {/* Divider */}
+            <div className="my-4 border-t border-slate-700" />
+            
+            {/* External Links */}
+            {externalLinks.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-4 py-2 rounded-lg transition text-slate-300 hover:text-white hover:bg-slate-800/50 flex items-center gap-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+                <GitBranch className="w-4 h-4" />
+              </a>
             ))}
           </nav>
         </aside>
