@@ -14,7 +14,7 @@ export default function Filters() {
         
         <div className="grid md:grid-cols-2 gap-4">
           {[
-            { name: 'Equalizer', desc: 'Adjust frequency bands' },
+            { name: 'Equalizer', desc: 'Adjust frequency bands (WASM Optimized)' },
             { name: 'Low Pass', desc: 'Remove high frequencies' },
             { name: 'Tremolo', desc: 'Modulate amplitude' },
             { name: 'Vibrato', desc: 'Modulate frequency' },
@@ -22,8 +22,9 @@ export default function Filters() {
             { name: 'Channel Mix', desc: 'Mix stereo channels' },
             { name: 'Echo', desc: 'Add echo/delay' },
             { name: 'Reverb', desc: 'Add reverb effect' },
-            { name: 'Timescale', desc: 'Speed/pitch control' },
+            { name: 'Timescale', desc: 'Speed/pitch control (WASM Optimized)' },
             { name: 'Volume', desc: 'Adjust volume level' },
+            { name: 'Distortion', desc: 'Add saturation and harmonic distortion (WASM Optimized)' },
           ].map((filter) => (
             <div key={filter.name} className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
               <h3 className="font-semibold text-cyan-400 mb-1">{filter.name}</h3>

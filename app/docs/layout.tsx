@@ -13,9 +13,7 @@ const navItems = [
   { label: 'Sources', href: '/docs/sources' },
 ];
 
-const externalLinks = [
-  { label: 'Contributing', href: '/contributing', external: false },
-];
+const externalLinks = [];
 
 export default function DocsLayout({
   children,
@@ -34,12 +32,18 @@ export default function DocsLayout({
             <Zap className="w-6 h-6 text-cyan-400" />
             <span className="text-xl font-bold text-white">AurisLink</span>
           </Link>
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-white"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-4">
+            <Link href="/contributing" className="hidden md:flex items-center gap-2 text-slate-300 hover:text-white transition">
+              <GitBranch className="w-4 h-4" />
+              <span>Contributing</span>
+            </Link>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden text-white"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -65,6 +69,16 @@ export default function DocsLayout({
             {/* Divider */}
             <div className="my-4 border-t border-slate-700" />
             
+            {/* Mobile Only Contributing */}
+            <Link
+              href="/contributing"
+              className="md:hidden block px-4 py-2 rounded-lg transition text-slate-300 hover:text-white hover:bg-slate-800/50 flex items-center gap-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contributing
+              <GitBranch className="w-4 h-4" />
+            </Link>
+
             {/* External Links */}
             {externalLinks.map((item) => (
               item.external ? (
