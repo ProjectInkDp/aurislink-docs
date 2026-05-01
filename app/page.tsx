@@ -44,7 +44,7 @@ export default function Home() {
           </h1>
 
           <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-            AurisLink is a lightweight, high-performance audio server that speaks Lavalink v4. Stream from SoundCloud, Deezer, Spotify, JioSaavn, and more with minimal latency. Perfect for Discord bots, streaming applications, and audio-driven services.
+            AurisLink is a lightweight, high-performance audio server powered by the <strong>AurisPlayer</strong> engine. Stream from SoundCloud, Deezer, Spotify, JioSaavn, and more with minimal latency. Built for the <strong>ProjectInkDp</strong> ecosystem.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -76,8 +76,8 @@ export default function Home() {
               <div className="text-sm text-slate-400">Audio Filters</div>
             </div>
             <div className="p-4 bg-slate-800/50 border border-slate-700 rounded-lg">
-              <div className="text-2xl font-bold text-cyan-400">v4</div>
-              <div className="text-sm text-slate-400">Lavalink Compatible</div>
+              <div className="text-2xl font-bold text-cyan-400">Engine</div>
+              <div className="text-sm text-slate-400">AurisPlayer v1.0.5</div>
             </div>
           </div>
         </div>
@@ -170,9 +170,9 @@ export default function Home() {
             <span className="font-semibold text-white">AurisLink</span>
           </div>
           <p className="text-slate-400 text-sm">
-            © 2024 AurisLink. MIT License. Built with ❤️ by{' '}
+            © 2026 AurisLink. MIT License. Maintained by{' '}
             <a href="https://github.com/ProjectInkDp" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300">
-              Dreep
+              ProjectInkDp
             </a>
           </p>
         </div>
