@@ -8,13 +8,38 @@ export default function Filters() {
         </p>
       </div>
 
+      {/* Exclusive Filters */}
+      <section>
+        <h2 className="text-2xl font-bold text-white mb-4">Exclusive Filters</h2>
+        <div className="grid md:grid-cols-1 gap-4">
+          <div className="bg-cyan-900/20 border border-cyan-500/50 rounded-lg p-6">
+            <div className="flex items-center gap-3 mb-2">
+              <h3 className="text-xl font-bold text-cyan-400">Bitcrusher</h3>
+              <span className="bg-cyan-500 text-black text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Exclusive</span>
+            </div>
+            <p className="text-slate-300 mb-4">
+              A unique Lo-Fi audio effect that reduces audio fidelity by decreasing bit depth and sample rate in real-time. Perfect for creating retro or industrial soundscapes.
+            </p>
+            <div className="bg-slate-900 rounded p-3">
+              <code className="text-xs text-cyan-300">
+                {`// Configuration
+{
+  "bits": 8,          // Target bit depth (e.g., 8, 4, 2)
+  "downsample": 4     // Downsampling factor (e.g., 2, 4, 8)
+}`}
+              </code>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Available Filters */}
       <section>
-        <h2 className="text-2xl font-bold text-white mb-4">Available Filters</h2>
+        <h2 className="text-2xl font-bold text-white mb-4">Standard Filters</h2>
         
         <div className="grid md:grid-cols-2 gap-4">
           {[
-            { name: 'Equalizer', desc: 'Adjust frequency bands (WASM Optimized)' },
+            { name: 'Equalizer', desc: 'Adjust frequency bands (Direct Form II Implementation)' },
             { name: 'Low Pass', desc: 'Remove high frequencies' },
             { name: 'Tremolo', desc: 'Modulate amplitude' },
             { name: 'Vibrato', desc: 'Modulate frequency' },

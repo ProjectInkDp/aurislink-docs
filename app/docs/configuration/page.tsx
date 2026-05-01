@@ -8,6 +8,32 @@ export default function Configuration() {
         </p>
       </div>
 
+      {/* Exclusive: Route Planner */}
+      <section>
+        <div className="flex items-center gap-3 mb-4">
+          <h2 className="text-2xl font-bold text-white">Route Planner</h2>
+          <span className="bg-cyan-500 text-black text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Advanced</span>
+        </div>
+        <p className="text-slate-300 mb-4">
+          AurisLink features an advanced Route Planner with the exclusive <strong>NanoSwitch</strong> strategy.
+        </p>
+        <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4 overflow-x-auto">
+          <pre className="text-slate-200 text-sm">
+{`routePlanner: {
+  strategy: 'NanoSwitch',      // 'RotateOnBan' | 'LoadBalance' | 'NanoSwitch'
+  ipBlocks: ['1.2.3.4/24'],    // CIDR blocks
+  cooldownMs: 600000,          // Ban cooldown
+}`}
+          </pre>
+        </div>
+        <div className="mt-4 p-4 bg-cyan-900/20 border border-cyan-500/30 rounded-lg">
+          <h4 className="text-cyan-400 font-semibold mb-1">Exclusive: NanoSwitch Strategy</h4>
+          <p className="text-sm text-slate-300">
+            Unlike standard strategies, <strong>NanoSwitch</strong> monitors real-time latency for each IP in your pool and automatically selects the fastest available route for every request.
+          </p>
+        </div>
+      </section>
+
       {/* Server Configuration */}
       <section>
         <h2 className="text-2xl font-bold text-white mb-4">Server Configuration</h2>
@@ -33,60 +59,30 @@ export default function Configuration() {
         </div>
       </section>
 
-      {/* Logging Configuration */}
-      <section>
-        <h2 className="text-2xl font-bold text-white mb-4">Logging Configuration</h2>
-        <p className="text-slate-300 mb-4">
-          Control logging behavior:
-        </p>
-        <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4 overflow-x-auto">
-          <pre className="text-slate-200 text-sm">
-{`logging: {
-  level: 'info',             // 'debug' | 'info' | 'warn' | 'error'
-  timestamps: true,          // Include timestamps in logs
-  colors: true,              // Use colored output
-  file: {
-    enabled: false,          // Log to file
-    path: 'logs',            // Log directory
-  }
-}`}
-          </pre>
-        </div>
-      </section>
-
       {/* Audio Sources */}
       <section>
         <h2 className="text-2xl font-bold text-white mb-4">Audio Sources</h2>
         
         <div className="space-y-6">
-          {/* SoundCloud */}
-          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
-            <h3 className="text-xl font-semibold text-cyan-400 mb-2">SoundCloud</h3>
-            <div className="overflow-x-auto">
-              <pre className="text-slate-200 text-sm">
-{`soundcloud: {
-  enabled: true,
-  clientId: 'YOUR_CLIENT_ID', // Get from SoundCloud API
-}`}
-              </pre>
+          {/* ICY Metadata */}
+          <div className="bg-cyan-900/20 border border-cyan-500/50 rounded-lg p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <h3 className="text-xl font-semibold text-cyan-400">ICY Metadata</h3>
+              <span className="bg-cyan-500 text-black text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Exclusive</span>
             </div>
-          </div>
-
-          {/* Deezer */}
-          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
-            <h3 className="text-xl font-semibold text-cyan-400 mb-2">Deezer</h3>
-            <div className="overflow-x-auto">
-              <pre className="text-slate-200 text-sm">
-{`deezer: {
-  enabled: true,
-  arl: 'YOUR_ARL_TOKEN',           // Deezer session token
-  decryptionKey: 'YOUR_DECRYPTION_KEY', // 16-character key
-}`}
-              </pre>
-            </div>
-            <p className="text-slate-300 text-sm mt-2">
-              <strong>Note:</strong> The ARL token is obtained from your Deezer browser session.
+            <p className="text-slate-300 text-sm mb-3">
+              AurisLink natively supports real-time metadata extraction from HTTP radio streams.
             </p>
+            <div className="overflow-x-auto">
+              <pre className="text-slate-200 text-sm">
+{`sources: {
+  icy: {
+    enabled: true,
+    intervalMs: 5000, // Metadata polling interval
+  }
+}`}
+              </pre>
+            </div>
           </div>
 
           {/* Spotify */}
@@ -105,63 +101,19 @@ export default function Configuration() {
             </div>
           </div>
 
-          {/* JioSaavn */}
+          {/* Deezer */}
           <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
-            <h3 className="text-xl font-semibold text-cyan-400 mb-2">JioSaavn</h3>
+            <h3 className="text-xl font-semibold text-cyan-400 mb-2">Deezer</h3>
             <div className="overflow-x-auto">
               <pre className="text-slate-200 text-sm">
-{`jiosaavn: {
+{`deezer: {
   enabled: true,
-  playlistLoadLimit: 50,  // Max tracks per playlist
-  artistLoadLimit: 20,    // Max tracks per artist
+  arl: 'YOUR_ARL_TOKEN',           // Deezer session token
+  decryptionKey: 'YOUR_DECRYPTION_KEY', // 16-character key
 }`}
               </pre>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Cluster Configuration */}
-      <section>
-        <h2 className="text-2xl font-bold text-white mb-4">Cluster Configuration</h2>
-        <p className="text-slate-300 mb-4">
-          Configure worker processes and timeouts:
-        </p>
-        <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4 overflow-x-auto">
-          <pre className="text-slate-200 text-sm">
-{`cluster: {
-  enabled: true,
-  workers: 1,                      // Number of workers
-  commandTimeoutMs: 10_000,        // Command timeout
-  fastCommandTimeoutMs: 5_000,     // Fast command timeout
-  hibernation: {
-    enabled: true,
-    timeoutMs: 1_200_000,          // 20 minutes
-  }
-}`}
-          </pre>
-        </div>
-      </section>
-
-      {/* Connection Monitoring */}
-      <section>
-        <h2 className="text-2xl font-bold text-white mb-4">Connection Monitoring</h2>
-        <p className="text-slate-300 mb-4">
-          Monitor and manage connection health:
-        </p>
-        <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4 overflow-x-auto">
-          <pre className="text-slate-200 text-sm">
-{`connection: {
-  logAllChecks: true,
-  intervalMs: 60_000,              // Check interval
-  timeoutMs: 10_000,               // Check timeout
-  thresholds: {
-    badMbps: 1,                    // Bad connection threshold
-    averageMbps: 5,                // Average connection threshold
-  },
-  probeUrl: 'https://speed.cloudflare.com/__down?bytes=1000000',
-}`}
-          </pre>
         </div>
       </section>
 
@@ -170,41 +122,14 @@ export default function Configuration() {
         <h2 className="text-2xl font-bold text-white mb-4">Performance Tuning</h2>
         <div className="space-y-4">
           <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
-            <h3 className="font-semibold text-cyan-400 mb-2">Player Update Interval</h3>
+            <h3 className="font-semibold text-cyan-400 mb-2">TrackCache SQL</h3>
             <p className="text-slate-300 text-sm">
-              <code className="bg-slate-900 px-2 py-1 rounded">playerUpdateInterval: 5_000</code> - Update player state every 5 seconds
+              AurisLink uses a high-performance SQLite database for track caching.
             </p>
+            <code className="block bg-slate-900 p-2 mt-2 rounded text-xs text-cyan-300">
+              {`trackCache: { enabled: true, path: './.auris-cache/tracks.db', ttlMs: 21600000 }`}
+            </code>
           </div>
-          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
-            <h3 className="font-semibold text-cyan-400 mb-2">Stats Interval</h3>
-            <p className="text-slate-300 text-sm">
-              <code className="bg-slate-900 px-2 py-1 rounded">statsInterval: 60_000</code> - Broadcast stats every 60 seconds
-            </p>
-          </div>
-          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
-            <h3 className="font-semibold text-cyan-400 mb-2">Track Stuck Threshold</h3>
-            <p className="text-slate-300 text-sm">
-              <code className="bg-slate-900 px-2 py-1 rounded">trackStuckThresholdMs: 10_000</code> - Detect stuck tracks after 10 seconds
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Environment Variables */}
-      <section>
-        <h2 className="text-2xl font-bold text-white mb-4">Environment Variables</h2>
-        <p className="text-slate-300 mb-4">
-          You can also use environment variables to override config values:
-        </p>
-        <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4 overflow-x-auto">
-          <pre className="text-slate-200 text-sm">
-{`AURISLINK_HOST=0.0.0.0
-AURISLINK_PORT=2333
-AURISLINK_PASSWORD=youshallnotpass
-SOUNDCLOUD_CLIENT_ID=...
-SPOTIFY_CLIENT_ID=...
-SPOTIFY_CLIENT_SECRET=...`}
-          </pre>
         </div>
       </section>
     </div>

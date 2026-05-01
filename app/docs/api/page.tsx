@@ -8,6 +8,21 @@ export default function APIReference() {
         </p>
       </div>
 
+      {/* Exclusive: Dashboard */}
+      <section>
+        <div className="flex items-center gap-3 mb-4">
+          <h2 className="text-2xl font-bold text-white">Visual Dashboard</h2>
+          <span className="bg-cyan-500 text-black text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Exclusive</span>
+        </div>
+        <div className="bg-cyan-900/20 border border-cyan-500/50 rounded-lg p-4">
+          <div className="space-y-2 text-slate-300 text-sm">
+            <div><strong>GET</strong> <code className="bg-slate-900 px-2 py-1 rounded">/dashboard</code></div>
+            <p>Access the built-in visual dashboard for real-time monitoring of server health and active players.</p>
+            <p className="text-xs text-slate-400 mt-2 italic">Note: This endpoint serves a full HTML page and does not require the Authorization header when accessed via browser (if configured).</p>
+          </div>
+        </div>
+      </section>
+
       {/* Authentication */}
       <section>
         <h2 className="text-2xl font-bold text-white mb-4">Authentication</h2>
@@ -44,19 +59,18 @@ export default function APIReference() {
                 <p className="font-semibold mb-1">Response:</p>
                 <pre className="text-xs overflow-x-auto">
 {`{
-  "version": "1.6.0",
+  "version": "1.8.0",
   "buildLine": 1234,
   "git": {
     "branch": "main",
     "commit": "abc123",
     "commitTime": 1234567890
   },
-  "jvm": "...",
-  "lavaplayer": "...",
   "source": {
     "soundcloud": true,
     "deezer": true,
-    "spotify": true
+    "spotify": true,
+    "icy": true
   }
 }`}
                 </pre>
