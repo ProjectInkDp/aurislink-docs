@@ -4,7 +4,7 @@ export default function Filters() {
       <div>
         <h1 className="text-4xl font-bold text-white mb-4">Audio Filters</h1>
         <p className="text-lg text-slate-300">
-          Explore all available audio filters and effects in AurisLink.
+          Explore all available audio filters and effects in AurisLink, powered by the <strong>AurisPlayer</strong> engine.
         </p>
       </div>
 
