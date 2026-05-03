@@ -80,6 +80,26 @@ export default function Sources() {
               </pre>
             </div>
           </div>
+
+          {/* YouTube Music */}
+          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+            <h3 className="text-lg font-semibold text-cyan-400 mb-2">🎵 YouTube Music</h3>
+            <p className="text-slate-300 mb-3">
+              Stream from YouTube Music using the InnerTube API. Supports anonymous tokens and multiple clients.
+            </p>
+            <div className="bg-slate-900 p-3 rounded text-sm text-slate-200 overflow-x-auto">
+              <pre>
+{`ytmusic: {
+  enabled: true,
+  clients: ["WEB_REMIX", "ANDROID_MUSIC"],
+  allowFallback: true
+}`}
+              </pre>
+            </div>
+            <p className="text-xs text-cyan-500 mt-2">
+              ✨ <strong>Note:</strong> The parser has been updated to support the latest 2026 InnerTube structure, ensuring stable search results.
+            </p>
+          </div>
         </div>
       </section>
 
